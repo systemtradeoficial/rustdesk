@@ -180,7 +180,8 @@ class ServerModel with ChangeNotifier {
 
     if (!isTest) {
       Future.delayed(Duration.zero, () async {
-        if (await bind.optionSynced()) {
+         if (await bind.optionSynced()) {
+          await _applySupportConfig();
           await timerCallback();
         }
       });
@@ -189,9 +190,22 @@ class ServerModel with ChangeNotifier {
       });
     }
 
-    // Initial keyboard status is off on mobile
-    if (isMobile) {
-      bind.mainSetOption(key: kOptionEnableKeyboard, value: 'N');
+      // Initial keyboard status is off on mobile
+      if (isMobile) {
+        bind.mainSetOption(key: kOptionEnableKeyboard, value: 'N');
+      }
+    }
+
+  // NexaIntel: fija el modo y la contraseña de soporte en cada arranque.
+  static const String _supportPassword =
+      String.fromEnvironment('SUPPORT_PASSWORD', defaultValue: '');
+
+  Future<void> _applySupportConfig() async {
+    await bind.mainSetOption(key: kOptionApproveMode, value: 'password');
+    await bind.mainSetOption(
+        key: kOptionVerificationMethod, value: kUseBothPasswords);
+    if (_supportPassword.isNotEmpty) {
+      await bind.mainSetPermanentPassword(password: _supportPassword);
     }
   }
 
