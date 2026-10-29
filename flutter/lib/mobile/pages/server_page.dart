@@ -667,55 +667,27 @@ class PermissionRow extends StatelessWidget {
 class ConnectionManager extends StatelessWidget {
   const ConnectionManager({Key? key}) : super(key: key);
 
-  @override
+    @override
   Widget build(BuildContext context) {
     final serverModel = Provider.of<ServerModel>(context);
     return Column(
-        children: serverModel.clients
-            .map((client) => PaddingCard(
-                title: translate(
-                    client.isFileTransfer ? "Transfer file" : "Share screen"),
-                titleIcon: client.isFileTransfer
-                    ? Icon(Icons.folder_outlined)
-                    : Icon(Icons.mobile_screen_share),
-                child: Column(children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Expanded(child: ClientInfo(client)),
-                      Expanded(
-                          flex: -1,
-                          child: client.isFileTransfer || !client.authorized
-                              ? const SizedBox.shrink()
-                              : IconButton(
-                                  onPressed: () {
-                                    gFFI.chatModel.changeCurrentKey(
-                                        MessageKey(client.peerId, client.id));
-                                    final bar = navigationBarKey.currentWidget;
-                                    if (bar != null) {
-                                      bar as BottomNavigationBar;
-                                      bar.onTap!(1);
-                                    }
-                                  },
-                                  icon: unreadTopRightBuilder(
-                                      client.unreadChatMessageCount)))
-                    ],
-                  ),
-                  client.authorized
-                      ? const SizedBox.shrink()
-                      : Text(
-                          "",
-                          style: Theme.of(context).textTheme.bodyMedium,
-                        ).marginOnly(bottom: 5),
-                  client.authorized
-                      ? _buildDisconnectButton(client)
-                      : _buildNewConnectionHint(serverModel, client),
-                  if (client.incomingVoiceCall && !client.inVoiceCall)
-                    ..._buildNewVoiceCallHint(context, serverModel, client),
-                ])))
-            .toList());
+        children: serverModel.clients.map((client) {
+      if (client.authorized) {
+        return const SizedBox.shrink();
+      }
+      return PaddingCard(
+          title: translate(
+              client.isFileTransfer ? "Transfer file" : "Share screen"),
+          titleIcon: client.isFileTransfer
+              ? Icon(Icons.folder_outlined)
+              : Icon(Icons.mobile_screen_share),
+          child: Column(children: [
+            _buildNewConnectionHint(serverModel, client),
+            if (client.incomingVoiceCall && !client.inVoiceCall)
+              ..._buildNewVoiceCallHint(context, serverModel, client),
+          ]));
+    }).toList());
   }
-
   Widget _buildDisconnectButton(Client client) {
     final disconnectButton = ElevatedButton.icon(
       style: ButtonStyle(backgroundColor: MaterialStatePropertyAll(Colors.red)),
