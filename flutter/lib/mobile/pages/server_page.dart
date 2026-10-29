@@ -17,7 +17,7 @@ import 'home_page.dart';
 
 class ServerPage extends StatefulWidget implements PageShape {
   @override
-  final title = translate("Share screen");
+  final title = "Phone";
 
   @override
   final icon = const Icon(Icons.mobile_screen_share);
