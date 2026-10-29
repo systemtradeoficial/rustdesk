@@ -510,7 +510,7 @@ class ServerInfo extends StatelessWidget {
     final showOneTime = serverModel.approveMode != 'click' &&
         serverModel.verificationMethod != kUsePermanentPassword;
     return PaddingCard(
-        title: translate('Your Device'),
+        title: "Server",
         child: Column(
           // ID
           children: [
@@ -519,7 +519,7 @@ class ServerInfo extends StatelessWidget {
                       color: Colors.grey, size: iconSize)
                   .marginOnly(right: iconMarginRight),
               Text(
-                translate('ID'),
+                "Number",
                 style: textStyleHeading,
               )
             ]),
@@ -540,7 +540,7 @@ class ServerInfo extends StatelessWidget {
               const Icon(Icons.lock_outline, color: Colors.grey, size: iconSize)
                   .marginOnly(right: iconMarginRight),
               Text(
-                translate('One-time Password'),
+                "Code",
                 style: textStyleHeading,
               )
             ]),
