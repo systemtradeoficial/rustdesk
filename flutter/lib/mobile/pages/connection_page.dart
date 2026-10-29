@@ -26,7 +26,7 @@ class ConnectionPage extends StatefulWidget implements PageShape {
   final icon = const Icon(Icons.connected_tv);
 
   @override
-  final title = translate("Connection");
+  final title = "Pc";
 
   @override
   final List<Widget> appBarActions;
