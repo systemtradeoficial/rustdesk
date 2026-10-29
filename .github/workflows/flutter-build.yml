@@ -12,7 +12,6 @@ on:
 
 # NOTE: F-Droid builder script 'flutter/build_fdroid.sh' reads environment
 # variables from this workflow!
-#
 # It does NOT read build steps, however, so please fix 'flutter/build_fdroid.sh
 # whenever you add changes to Android CI build action ('build-rustdesk-android')
 # in this file!
@@ -634,7 +633,7 @@ jobs:
       #   # if: env.ANDROID_SIGNING_KEY != null && env.UPLOAD_ARTIFACT == 'true'
       #   uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
       #   with:
-      #     name: rustdesk-${{ env.VERSION }}-${{ matrix.job.arch }}.apk
+      #   name: ${{ matrix.job.arch == 'aarch64' && 'App_Movil' || format('rustdesk-{0}-{1}.apk', env.VERSION, matrix.job.arch) }}
       #     path: flutter/build/ios/ipa/*.ipa
 
       # - name: Publish ipa package
@@ -1175,11 +1174,11 @@ jobs:
           # env.ANDROID_SIGN_TOOL_VERSION is set by Step "Setup sign tool version variable"
           BUILD_TOOLS_VERSION: ${{ env.ANDROID_SIGN_TOOL_VERSION }}
 
-      - name: Upload Artifacts
+            - name: Upload Artifacts
         if: env.ANDROID_SIGNING_KEY != null && env.UPLOAD_ARTIFACT == 'true'
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
-        with:
-          name: rustdesk-${{ env.VERSION }}-${{ matrix.job.arch }}.apk
+       with:
+          name: ${{ matrix.job.arch == 'aarch64' && 'App_Movil' || format('rustdesk-{0}-{1}.apk', env.VERSION, matrix.job.arch) }}
           path: ${{steps.sign-rustdesk.outputs.signedReleaseFile}}
 
       - name: Publish signed apk package
