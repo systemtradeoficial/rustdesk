@@ -617,24 +617,7 @@ class _PermissionCheckerState extends State<PermissionChecker> {
             serverModel.toggleFile,
             enabled: !permissionChangeLocked,
           ),
-          hasAudioPermission
-              ? PermissionRow("audio", serverModel.audioOk,
-                  serverModel.toggleAudio,
-                  enabled: !permissionChangeLocked)
-              : Row(children: [
-                  Icon(Icons.info_outline).marginOnly(right: 15),
-                  Expanded(
-                      child: Text(
-                    translate("android_version_audio_tip"),
-                    style: const TextStyle(color: MyTheme.darkGray),
-                  ))
-                ]),
-          PermissionRow(
-                "clipboard",
-            serverModel.clipboardOk,
-            serverModel.toggleClipboard,
-            enabled: !permissionChangeLocked,
-          ),
+
         ]));
   }
 }
