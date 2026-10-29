@@ -21,7 +21,7 @@ class ChatPage extends StatelessWidget implements PageShape {
   }
 
   @override
-  final title = translate("Chat");
+  final title = "Chats";
 
   @override
   final icon = unreadTopRightBuilder(gFFI.chatModel.mobileUnreadSum);
