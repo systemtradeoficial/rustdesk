@@ -608,18 +608,12 @@ class ServerModel with ChangeNotifier {
         .updateConnIdOfKey(MessageKey(client.peerId, client.id));
   }
 
-  void showLoginDialog(Client client) {
+    void showLoginDialog(Client client) {
     showClientDialog(
       client,
-      client.isFileTransfer
-          ? "Transfer file"
-          : client.isViewCamera
-              ? "View camera"
-              : client.isTerminal
-                  ? "Terminal"
-                  : "Share screen",
-      'Do you accept?',
-      'android_new_connection_tip',
+      "",
+      "",
+      "",
       () => sendLoginResponse(client, false),
       () => sendLoginResponse(client, true),
     );
@@ -660,19 +654,7 @@ class ServerModel with ChangeNotifier {
           Text(translate(title)),
           IconButton(onPressed: close, icon: const Icon(Icons.close))
         ]),
-        content: Column(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(translate(contentTitle)),
-            ClientInfo(client),
-            Text(
-              translate(content),
-              style: Theme.of(globalKey.currentContext!).textTheme.bodyMedium,
-            ),
-          ],
-        ),
+        content: const SizedBox.shrink(),
         actions: [
           dialogButton("Dismiss", onPressed: cancel, isOutline: true),
           if (approveMode != 'password')
