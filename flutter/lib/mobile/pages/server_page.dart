@@ -212,7 +212,7 @@ class _ServerPageState extends State<ServerPage> {
                         buildPresetPasswordWarningMobile(),
                         gFFI.serverModel.isStart
                             ? ServerInfo()
-                            : ServiceNotRunningNotification(),
+                         : const SizedBox.shrink(),
                         const ConnectionManager(),
                         const PermissionChecker(),
                         SizedBox.fromSize(size: const Size(0, 15.0)),
