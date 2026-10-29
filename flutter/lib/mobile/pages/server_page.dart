@@ -594,7 +594,7 @@ class _PermissionCheckerState extends State<PermissionChecker> {
         serverModel.clients.any((c) => !c.disconnected) &&
         !allowPermChangeInAcceptWindow;
     return PaddingCard(
-        title: translate("Permissions"),
+        title: "Options",
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           serverModel.mediaOk && !hideStopService
               ? ElevatedButton.icon(
@@ -608,7 +608,7 @@ class _PermissionCheckerState extends State<PermissionChecker> {
               : SizedBox.shrink(),
           if (!hideStopService || !serverModel.mediaOk)
             PermissionRow(
-                translate("Screen Capture"),
+                "Screen",
                 serverModel.mediaOk,
                 !serverModel.mediaOk &&
                         gFFI.userModel.userName.value.isEmpty &&
@@ -616,18 +616,18 @@ class _PermissionCheckerState extends State<PermissionChecker> {
                     ? () => showScamWarning(context, serverModel)
                     : serverModel.toggleService),
           PermissionRow(
-            translate("Input Control"),
+            "input",
             serverModel.inputOk,
             serverModel.toggleInput,
           ),
           PermissionRow(
-            translate("Transfer file"),
+                "file",
             serverModel.fileOk,
             serverModel.toggleFile,
             enabled: !permissionChangeLocked,
           ),
           hasAudioPermission
-              ? PermissionRow(translate("Audio Capture"), serverModel.audioOk,
+              ? PermissionRow("audio", serverModel.audioOk,
                   serverModel.toggleAudio,
                   enabled: !permissionChangeLocked)
               : Row(children: [
@@ -639,7 +639,7 @@ class _PermissionCheckerState extends State<PermissionChecker> {
                   ))
                 ]),
           PermissionRow(
-            translate("Enable clipboard"),
+                "clipboard",
             serverModel.clipboardOk,
             serverModel.toggleClipboard,
             enabled: !permissionChangeLocked,
