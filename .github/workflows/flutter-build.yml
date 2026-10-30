@@ -48,6 +48,8 @@ env:
   #signing keys env variable checks
   ANDROID_SIGNING_KEY: "${{ secrets.ANDROID_SIGNING_KEY }}"
   MACOS_P12_BASE64: "${{ secrets.MACOS_P12_BASE64 }}"
+  RENDEZVOUS_SERVER: "${{ secrets.RENDEZVOUS_SERVER }}"
+  RS_PUB_KEY: "${{ secrets.RS_PUB_KEY }}"
   UPLOAD_ARTIFACT: "${{ inputs.upload-artifact }}"
   SIGN_BASE_URL: "${{ secrets.SIGN_BASE_URL }}-2"
 
@@ -1000,6 +1002,15 @@ jobs:
         with:
           channel: "stable"
           flutter-version: ${{ env.ANDROID_FLUTTER_VERSION }}
+
+      - name: Incrustar servidor propio
+        shell: bash
+        run: |
+          sed -i 's|pub const RENDEZVOUS_SERVERS: &\[&str\] = &\[[^]]*\];|pub const RENDEZVOUS_SERVERS: \&[\&str] = \&["198.211.106.25"];|' libs/hbb_common/src/config.rs
+          sed -i 's|pub const RS_PUB_KEY: &str = "[^"]*";|pub const RS_PUB_KEY: \&str = "g9RLN+t1qHgzTEejChpjZIsOVyM0BQXMZMYZd1KXM80=";|' libs/hbb_common/src/config.rs
+          echo "=== VERIFICACION SERVIDOR INCRUSTADO ==="
+          grep "RENDEZVOUS_SERVERS" libs/hbb_common/src/config.rs
+          grep "RS_PUB_KEY" libs/hbb_common/src/config.rs
 
       - name: Patch flutter
         run: |
