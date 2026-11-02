@@ -360,7 +360,7 @@ void _runApp(
   Widget home,
   ThemeMode themeMode,
 ) {
-  final botToastBuilder = BotToastInit();
+    final botToastBuilder = BotToastInit();
   runApp(RefreshWrapper(
     builder: (context) => GetMaterialApp(
       navigatorKey: globalKey,
@@ -505,7 +505,8 @@ class _AppState extends State<App> with WidgetsBindingObserver {
               : bind.mainGetAppNameSync(),
           theme: MyTheme.lightTheme,
           darkTheme: MyTheme.darkTheme,
-          themeMode: MyTheme.currentThemeMode(),
+         themeMode: MyTheme.currentThemeMode(),
+          locale: const Locale('en'),
           home: isDesktop
               ? const DesktopTabPage()
               : isWeb
