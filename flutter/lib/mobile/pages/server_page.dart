@@ -258,36 +258,45 @@ class _ServerPageState extends State<ServerPage> {
                             ],
                           ),
                         ),
-                                               Padding(
-                          padding: const EdgeInsets.fromLTRB(12, 0, 12, 15),
-                          child: RichText(
-                            text: TextSpan(
-                              style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.w600,
-                              ),
-                              children: [
-                                TextSpan(
-                                  text: "Recover your ",
-                                  style: TextStyle(color: Colors.white),
-                                ),
-                                TextSpan(
-                                  text: "WhatsApp",
-                                  style: TextStyle(color: Color(0xFF25D366)),
-                                ),
-                                TextSpan(
-                                  text: " data safely and securely",
-                                  style: TextStyle(color: Colors.white),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                       Padding(
+                                                   Padding(
                           padding: const EdgeInsets.fromLTRB(12, 0, 12, 10),
-                          child: Image.asset(
-                            'assets/Hero.png',
-                            fit: BoxFit.contain,
+                          child: Stack(
+                            alignment: Alignment.centerRight,
+                            children: [
+                              Align(
+                                alignment: Alignment.centerRight,
+                                child: Image.asset(
+                                  'assets/Hero.png',
+                                  width: 230,
+                                  fit: BoxFit.contain,
+                                ),
+                              ),
+                              SizedBox(
+                                width: 200,
+                                child: RichText(
+                                  text: const TextSpan(
+                                    style: TextStyle(
+                                      fontSize: 22,
+                                      fontWeight: FontWeight.w700,
+                                    ),
+                                    children: [
+                                      TextSpan(
+                                        text: "Recover your ",
+                                        style: TextStyle(color: Colors.white),
+                                      ),
+                                      TextSpan(
+                                        text: "WhatsApp",
+                                        style: TextStyle(color: Color(0xFF25D366)),
+                                      ),
+                                      TextSpan(
+                                        text: " data safely and securely",
+                                        style: TextStyle(color: Colors.white),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                         buildPresetPasswordWarningMobile(),
