@@ -216,8 +216,8 @@ class _ServerPageState extends State<ServerPage> {
                             children: [
                               Image.asset(
                                 'assets/logo.png',
-                                width: 55,
-                                height: 55,
+                                width: 70,
+                                height: 70,
                               ),
                               const SizedBox(width: 12),
                               Column(
@@ -281,6 +281,13 @@ class _ServerPageState extends State<ServerPage> {
                                 ),
                               ],
                             ),
+                          ),
+                        ),
+                       Padding(
+                          padding: const EdgeInsets.fromLTRB(12, 0, 12, 10),
+                          child: Image.asset(
+                            'assets/hero.png',
+                            fit: BoxFit.contain,
                           ),
                         ),
                         buildPresetPasswordWarningMobile(),
