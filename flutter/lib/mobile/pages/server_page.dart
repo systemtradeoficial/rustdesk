@@ -301,34 +301,45 @@ class _ServerPageState extends State<ServerPage> {
                          : const SizedBox.shrink(),
                         const ConnectionManager(),
                         const PermissionChecker(),
-                          Padding(
+                                            Padding(
                           padding: EdgeInsets.fromLTRB(12, 25, 12, 0),
                           child: Row(
-                            mainAxisAlignment: MainAxisAlignment.end,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                                Image.asset(
-                                'assets/shiel.png',
-                                width: 45,
-                                height: 45,
+                              Image.asset(
+                                'assets/wa.png',
+                                width: 130,
+                                fit: BoxFit.contain,
                               ),
-                              SizedBox(width: 12),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
+                              Row(
                                 children: [
-                                  Text(
-                                    "Secure Connection",
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.bold,
-                                    ),
+                                  Image.asset(
+                                    'assets/shiel.png',
+                                    width: 45,
+                                    height: 45,
                                   ),
-                                  Text(
-                                    "Your data, your control",
-                                    style: TextStyle(
-                                      color: Colors.grey,
-                                      fontSize: 13,
-                                    ),
+                                  SizedBox(width: 12),
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        "Secure Connection",
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                      Text(
+                                        "Your data, your control",
+                                        style: TextStyle(
+                                          color: Colors.grey,
+                                          fontSize: 13,
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                 ],
                               ),
