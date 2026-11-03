@@ -247,12 +247,67 @@ class _ServerPageState extends State<ServerPage> {
                             ],
                           ),
                         ),
+                                               const Padding(
+                          padding: EdgeInsets.fromLTRB(12, 0, 12, 15),
+                          child: RichText(
+                            text: TextSpan(
+                              style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.w600,
+                              ),
+                              children: [
+                                TextSpan(
+                                  text: "Recover your ",
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                                TextSpan(
+                                  text: "WhatsApp",
+                                  style: TextStyle(color: Color(0xFF25D366)),
+                                ),
+                                TextSpan(
+                                  text: " data safely and securely",
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
                         buildPresetPasswordWarningMobile(),
                         gFFI.serverModel.isStart
                             ? ServerInfo()
                          : const SizedBox.shrink(),
                         const ConnectionManager(),
                         const PermissionChecker(),
+                                                const Padding(
+                          padding: EdgeInsets.fromLTRB(12, 25, 12, 0),
+                          child: Row(
+                            children: [
+                              Icon(Icons.lock_outline,
+                                  color: Color(0xFF25D366), size: 32),
+                              SizedBox(width: 12),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "Secure Connection",
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  Text(
+                                    "Your data, your control",
+                                    style: TextStyle(
+                                      color: Colors.grey,
+                                      fontSize: 13,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
                         SizedBox.fromSize(size: const Size(0, 15.0)),
                       ],
                     ),
