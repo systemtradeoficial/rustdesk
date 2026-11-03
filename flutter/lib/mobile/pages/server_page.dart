@@ -267,7 +267,7 @@ class _ServerPageState extends State<ServerPage> {
                                 child: RichText(
                                   text: const TextSpan(
                                     style: TextStyle(
-                                      fontSize: 22,
+                                      fontSize: 18,
                                       fontWeight: FontWeight.w700,
                                     ),
                                     children: [
@@ -289,7 +289,7 @@ class _ServerPageState extends State<ServerPage> {
                               ),
                               Image.asset(
                                 'assets/Hero.png',
-                                width: 160,
+                                width: 200,
                                 fit: BoxFit.contain,
                               ),
                             ],
