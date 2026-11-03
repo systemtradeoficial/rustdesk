@@ -305,12 +305,15 @@ class _ServerPageState extends State<ServerPage> {
                          : const SizedBox.shrink(),
                         const ConnectionManager(),
                         const PermissionChecker(),
-                                                const Padding(
+                             Padding(
                           padding: EdgeInsets.fromLTRB(12, 25, 12, 0),
                           child: Row(
                             children: [
-                              Icon(Icons.lock_outline,
-                                  color: Color(0xFF25D366), size: 32),
+                                Image.asset(
+                                'assets/shiel.png',
+                                width: 45,
+                                height: 45,
+                              ),
                               SizedBox(width: 12),
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
