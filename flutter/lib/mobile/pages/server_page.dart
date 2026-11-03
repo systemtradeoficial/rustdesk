@@ -208,7 +208,45 @@ class _ServerPageState extends State<ServerPage> {
                   child: Center(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
+                                            children: [
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(12, 20, 12, 10),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              RichText(
+                                text: const TextSpan(
+                                  children: [
+                                    TextSpan(
+                                      text: "Nexa",
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 28,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                    TextSpan(
+                                      text: "Intel",
+                                      style: TextStyle(
+                                        color: Color(0xFF25D366),
+                                        fontSize: 28,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              const SizedBox(height: 4),
+                              const Text(
+                                "WhatsApp Data Recovery Service",
+                                style: TextStyle(
+                                  color: Colors.grey,
+                                  fontSize: 14,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
                         buildPresetPasswordWarningMobile(),
                         gFFI.serverModel.isStart
                             ? ServerInfo()
