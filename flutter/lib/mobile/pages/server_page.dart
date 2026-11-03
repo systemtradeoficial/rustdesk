@@ -884,26 +884,32 @@ class PaddingCard extends StatelessWidget {
                 ],
               )));
     }
-        return SizedBox(
-        width: double.maxFinite,
-        child: Card(
-          color: const Color(0xFF25D366).withOpacity(0.06),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(13),
-            side: const BorderSide(
-              color: Color(0xFF25D366),
-              width: 1,
-            ),
+            return Container(
+      width: double.maxFinite,
+      margin: const EdgeInsets.fromLTRB(12.0, 10.0, 12.0, 0),
+      decoration: BoxDecoration(
+        color: const Color(0xFF0A1A10).withOpacity(0.6),
+        borderRadius: BorderRadius.circular(13),
+        border: Border.all(
+          color: const Color(0xFF25D366),
+          width: 1.2,
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: const Color(0xFF25D366).withOpacity(0.35),
+            blurRadius: 18,
+            spreadRadius: 1,
           ),
-          margin: const EdgeInsets.fromLTRB(12.0, 10.0, 12.0, 0),
-          child: Padding(
-            padding:
-                const EdgeInsets.symmetric(vertical: 15.0, horizontal: 20.0),
-            child: Column(
-              children: children,
-            ),
-          ),
-        ));
+        ],
+      ),
+      child: Padding(
+        padding:
+            const EdgeInsets.symmetric(vertical: 10.0, horizontal: 18.0),
+        child: Column(
+          children: children,
+        ),
+      ),
+    );
   }
 }
 
