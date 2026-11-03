@@ -286,7 +286,7 @@ class _ServerPageState extends State<ServerPage> {
                        Padding(
                           padding: const EdgeInsets.fromLTRB(12, 0, 12, 10),
                           child: Image.asset(
-                            'assets/hero.png',
+                            'assets/Hero.png',
                             fit: BoxFit.contain,
                           ),
                         ),
