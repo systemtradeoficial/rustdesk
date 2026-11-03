@@ -87,6 +87,7 @@ class HomePageState extends State<HomePage> {
                 .toList(),
             currentIndex: _selectedIndex,
             type: BottomNavigationBarType.fixed,
+            backgroundColor: const Color(0xFF0A0A0A),
             selectedItemColor: MyTheme.accent, //
             unselectedItemColor: MyTheme.darkGray,
             onTap: (index) => setState(() {
