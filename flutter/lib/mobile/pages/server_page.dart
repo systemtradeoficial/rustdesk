@@ -258,21 +258,12 @@ class _ServerPageState extends State<ServerPage> {
                             ],
                           ),
                         ),
-                                                   Padding(
+                                                                           Padding(
                           padding: const EdgeInsets.fromLTRB(12, 0, 12, 10),
-                          child: Stack(
-                            alignment: Alignment.centerRight,
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              Align(
-                                alignment: Alignment.centerRight,
-                                child: Image.asset(
-                                  'assets/Hero.png',
-                                  width: 230,
-                                  fit: BoxFit.contain,
-                                ),
-                              ),
-                              SizedBox(
-                                width: 200,
+                              Expanded(
                                 child: RichText(
                                   text: const TextSpan(
                                     style: TextStyle(
@@ -296,6 +287,11 @@ class _ServerPageState extends State<ServerPage> {
                                   ),
                                 ),
                               ),
+                              Image.asset(
+                                'assets/Hero.png',
+                                width: 160,
+                                fit: BoxFit.contain,
+                              ),
                             ],
                           ),
                         ),
@@ -305,9 +301,10 @@ class _ServerPageState extends State<ServerPage> {
                          : const SizedBox.shrink(),
                         const ConnectionManager(),
                         const PermissionChecker(),
-                             Padding(
+                          Padding(
                           padding: EdgeInsets.fromLTRB(12, 25, 12, 0),
                           child: Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
                             children: [
                                 Image.asset(
                                 'assets/shiel.png',
