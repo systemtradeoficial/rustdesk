@@ -258,8 +258,8 @@ class _ServerPageState extends State<ServerPage> {
                             ],
                           ),
                         ),
-                                               const Padding(
-                          padding: EdgeInsets.fromLTRB(12, 0, 12, 15),
+                                               Padding(
+                          padding: const EdgeInsets.fromLTRB(12, 0, 12, 15),
                           child: RichText(
                             text: TextSpan(
                               style: TextStyle(
