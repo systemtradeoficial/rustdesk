@@ -883,17 +883,17 @@ class PaddingCard extends StatelessWidget {
       width: double.maxFinite,
       margin: const EdgeInsets.fromLTRB(12.0, 6.0, 12.0, 0),
       decoration: BoxDecoration(
-        color: const Color(0xFF0A1A10).withOpacity(0.6),
+                color: Colors.white.withOpacity(0.04),
         borderRadius: BorderRadius.circular(13),
         border: Border.all(
-          color: const Color(0xFF25D366),
-          width: 1.2,
+          color: Colors.white.withOpacity(0.12),
+          width: 1,
         ),
-        boxShadow: [
+          boxShadow: [
           BoxShadow(
-            color: const Color(0xFF25D366).withOpacity(0.35),
-            blurRadius: 18,
-            spreadRadius: 1,
+            color: Colors.black.withOpacity(0.3),
+            blurRadius: 10,
+            spreadRadius: 0,
           ),
         ],
       ),
