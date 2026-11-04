@@ -302,8 +302,12 @@ class _ServerPageState extends State<ServerPage> {
                          : const SizedBox.shrink(),
                         const ConnectionManager(),
                         const PermissionChecker(),
-                                                                    Padding(
-                          padding: const EdgeInsets.fromLTRB(12, 45, 12, 0),
+                          Padding(
+                             padding: EdgeInsets.fromLTRB(
+                              12,
+                              gFFI.serverModel.isStart ? 15 : 45,
+                              12,
+                              0),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.center,
