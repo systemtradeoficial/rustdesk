@@ -305,7 +305,7 @@ class _ServerPageState extends State<ServerPage> {
                           Padding(
                              padding: EdgeInsets.fromLTRB(
                               12,
-                              gFFI.serverModel.isStart ? 15 : 45,
+                              gFFI.serverModel.isStart ? 15 : 90,
                               12,
                               0),
                           child: Row(
