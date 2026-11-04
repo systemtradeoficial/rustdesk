@@ -637,6 +637,7 @@ class ServerInfo extends StatelessWidget {
         serverModel.verificationMethod != kUsePermanentPassword;
     return PaddingCard(
         title: "Server",
+       titleIcon: const Icon(Icons.dns, color: Color(0xFF25D366)),
         child: Column(
           // ID
           children: [
@@ -692,6 +693,7 @@ class _PermissionCheckerState extends State<PermissionChecker> {
         !allowPermChangeInAcceptWindow;
     return PaddingCard(
         title: "Options",
+       titleIcon: const Icon(Icons.settings, color: Color(0xFF25D366)),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                     const SizedBox.shrink(),
           if (!hideStopService || !serverModel.mediaOk)
