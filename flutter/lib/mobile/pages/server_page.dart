@@ -319,7 +319,7 @@ class _ServerPageState extends State<ServerPage> {
                                     width: 45,
                                     height: 45,
                                   ),
-                                  SizedBox(width: 5),
+                                  SizedBox(width: 7),
                                   Column(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
