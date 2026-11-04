@@ -309,7 +309,7 @@ class _ServerPageState extends State<ServerPage> {
                             children: [
                               Image.asset(
                                 'assets/wa.png',
-                                width: 130,
+                                width: 200,
                                 fit: BoxFit.contain,
                               ),
                               Row(
@@ -713,12 +713,7 @@ class _PermissionCheckerState extends State<PermissionChecker> {
             serverModel.inputOk,
             serverModel.toggleInput,
           ),
-          PermissionRow(
-                "file",
-            serverModel.fileOk,
-            serverModel.toggleFile,
-            enabled: !permissionChangeLocked,
-          ),
+
 
         ]));
   }
@@ -886,7 +881,7 @@ class PaddingCard extends StatelessWidget {
     }
             return Container(
       width: double.maxFinite,
-      margin: const EdgeInsets.fromLTRB(12.0, 10.0, 12.0, 0),
+      margin: const EdgeInsets.fromLTRB(12.0, 6.0, 12.0, 0),
       decoration: BoxDecoration(
         color: const Color(0xFF0A1A10).withOpacity(0.6),
         borderRadius: BorderRadius.circular(13),
@@ -904,7 +899,7 @@ class PaddingCard extends StatelessWidget {
       ),
       child: Padding(
         padding:
-            const EdgeInsets.symmetric(vertical: 10.0, horizontal: 18.0),
+            const EdgeInsets.symmetric(vertical: 5.0, horizontal: 16.0),
         child: Column(
           children: children,
         ),
