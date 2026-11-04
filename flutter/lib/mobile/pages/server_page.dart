@@ -259,7 +259,7 @@ class _ServerPageState extends State<ServerPage> {
                           ),
                         ),
                                                                            Padding(
-                          padding: const EdgeInsets.fromLTRB(12, 0, 12, 10),
+                          padding: const EdgeInsets.fromLTRB(12, 25, 12, 20),
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
@@ -295,51 +295,42 @@ class _ServerPageState extends State<ServerPage> {
                             ],
                           ),
                         ),
+                        const SizedBox(height: 30),
                         buildPresetPasswordWarningMobile(),
                         gFFI.serverModel.isStart
                             ? ServerInfo()
                          : const SizedBox.shrink(),
                         const ConnectionManager(),
                         const PermissionChecker(),
-                                            Padding(
-                          padding: EdgeInsets.fromLTRB(12, 25, 12, 0),
+                                                                    Padding(
+                          padding: const EdgeInsets.fromLTRB(12, 45, 12, 0),
                           child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Image.asset(
-                                'assets/wa.png',
-                                width: 200,
-                                fit: BoxFit.contain,
+                                'assets/shiel.png',
+                                width: 45,
+                                height: 45,
                               ),
-                              Row(
+                              const SizedBox(width: 7),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Image.asset(
-                                    'assets/shiel.png',
-                                    width: 45,
-                                    height: 45,
+                                  Text(
+                                    "Secure Connection",
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold,
+                                    ),
                                   ),
-                                  SizedBox(width: 7),
-                                  Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        "Secure Connection",
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                      ),
-                                      Text(
-                                        "Your data, your control",
-                                        style: TextStyle(
-                                          color: Colors.grey,
-                                          fontSize: 13,
-                                        ),
-                                      ),
-                                    ],
+                                  Text(
+                                    "Your data, your control",
+                                    style: TextStyle(
+                                      color: Colors.grey,
+                                      fontSize: 13,
+                                    ),
                                   ),
                                 ],
                               ),
@@ -882,18 +873,18 @@ class PaddingCard extends StatelessWidget {
             return Container(
       width: double.maxFinite,
       margin: const EdgeInsets.fromLTRB(12.0, 6.0, 12.0, 0),
-      decoration: BoxDecoration(
-                color: Colors.white.withOpacity(0.04),
+            decoration: BoxDecoration(
+        color: Colors.black.withOpacity(0.25),
         borderRadius: BorderRadius.circular(13),
         border: Border.all(
-          color: Colors.white.withOpacity(0.12),
+          color: const Color(0xFF25D366).withOpacity(0.6),
           width: 1,
         ),
-          boxShadow: [
+        boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.3),
-            blurRadius: 10,
-            spreadRadius: 0,
+            color: const Color(0xFF25D366).withOpacity(0.25),
+            blurRadius: 25,
+            spreadRadius: 2,
           ),
         ],
       ),
